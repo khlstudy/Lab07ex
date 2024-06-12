@@ -41,7 +41,7 @@ namespace Lab07
             column = new DataGridViewCheckBoxColumn(); column.DataPropertyName = "HasAirport"; column.Name = "Аеропорт";
             column.Width = 60; gvTowns.Columns.Add(column);
 
-            bindSrcTowns.Add(new Town("Львів", "Україна", "Львівська обл.", 800000, 2000000, 400, false, true));
+            bindSrcTowns.Add(new Town("Дніпро", "Україна", "Дніпропетровська обл.", 980948, 3000000, 405, true, false));
             EventArgs args = new EventArgs(); OnResize(args);
 
         }
@@ -75,7 +75,7 @@ namespace Lab07
         private void btnDel_Click(object sender, EventArgs e)
         {
             {
-                if (MessageBox.Show("Видалити поточний запис?", "Видалення запису", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                if (MessageBox.Show("Видалити цей запис?", "Видалення запису", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     bindSrcTowns.RemoveCurrent();
                 }
@@ -86,7 +86,7 @@ namespace Lab07
         private void btnClear_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(
-               "Очистити таблицю?\n\nВсі дані будуть втрачені", "Очищення даних",
+               "Очистити таблицю?", "Очищення даних",
                MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 bindSrcTowns.Clear();
